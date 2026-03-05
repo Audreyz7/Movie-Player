@@ -1,0 +1,21 @@
+<!doctype html>
+<title>Upload new File</title>
+<h1>Upload new File</h1>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<p>Allowed video types: gif, mp4, mov</p>
+<p>Files will be saved into the <code>uploads</code> folder inside your Movie-Player project.</p>
+
+<form method="post" enctype="multipart/form-data">
+  <input type="file" name="file">
+  <input type="submit" value="Upload">
+</form>
